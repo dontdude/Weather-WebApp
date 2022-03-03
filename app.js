@@ -3,6 +3,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+require('dotenv').config();   //Hiding API keys with Environment Variables (dotenv)
+
 const https = require('https');
 
 const app = express();
@@ -17,7 +19,9 @@ app.post("/", function(req, res){
   
     const city = req.body.cityName;
     
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&units=metric&appid=cd0a53a13939ee80096a1b34216ea1f8&lang=en";
+    const api_key = process.env.API_KEY;
+    
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&units=metric&appid=" + api_key + "&lang=en";
     
     https.get(url, function(response){
        
