@@ -33,7 +33,7 @@ app.post("/", function(req, res){
             res.setHeader("Content-Type", "text/html");   //to use image as first write 
 
             res.write("<br><h1 style=\"text-align:center; font-family: monospace, Courier;\">The Temperature in " +  city.toUpperCase() + " is : " + temp + "* C</h1><br><hr>");
-            res.write("<img style=\"display:block; margin-left:auto; margin-right:auto; width:25%;\" src=" + imageUrl + ">");
+            res.write("<img style=\"display:block; margin-left:auto; margin-right:auto; width:15%;\" src=" + imageUrl + ">");
             res.write("<h3 style=\"text-align:center; font-family: monospace, Courier;\">" + weather + "</h3>");
             
             res.send();    
